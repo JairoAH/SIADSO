@@ -113,7 +113,7 @@
                             <div class="team boxed-grey">
                                 <div class="inner">
                                     <h5>EDWIN LEÓN</h5>
-                                    <p class="subtitle">Pixel Crafter</p>
+                                    <p class="subtitle">Analista y Desarrollador</p>
                                     <div class="avatar"><img src="img/team/1.jpg" alt="" class="img-responsive img-circle" /></div>
                                 </div>
                             </div>
@@ -124,7 +124,7 @@
                             <div class="team boxed-grey">
                                 <div class="inner">
                                     <h5>DANIEL LÓPEZ</h5>
-                                    <p class="subtitle">Ruby on Rails</p>
+                                    <p class="subtitle">Analista y Desarrollador</p>
                                     <div class="avatar"><img src="img/team/2.jpg" alt="" class="img-responsive img-circle" /></div>
 
                                 </div>
@@ -136,7 +136,7 @@
                             <div class="team boxed-grey">
                                 <div class="inner">
                                     <h5>OSCAR RONCANCIO</h5>
-                                    <p class="subtitle">jQuery Ninja</p>
+                                    <p class="subtitle">Analista y Desarrollador</p>
                                     <div class="avatar"><img src="img/team/3.jpg" alt="" class="img-responsive img-circle" /></div>
 
                                 </div>
@@ -148,7 +148,7 @@
                             <div class="team boxed-grey">
                                 <div class="inner">
                                     <h5>JAIRO A. HERNÁNDEZ</h5>
-                                    <p class="subtitle">Typographer</p>
+                                    <p class="subtitle">Analista y Desarrollador</p>
                                     <div class="avatar"><img src="img/team/4.jpg" alt="" class="img-responsive img-circle" /></div>
 
                                 </div>
