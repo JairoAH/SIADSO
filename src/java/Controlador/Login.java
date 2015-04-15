@@ -27,7 +27,7 @@ public class Login extends HttpServlet {
                 String Clave = request.getParameter("txtPassword").trim(); //Asignar a user userpass lo que esta en el parametro txt password
 
                 HttpSession sesion = request.getSession(); //Objeto de tipo sesión
-                sesion.setMaxInactiveInterval(60);//Tiempo de actividad de la sesión
+                sesion.setMaxInactiveInterval(1800);//Tiempo de actividad de la sesión
                 DTOPersonas usdto = new DTOPersonas();
                 DAOPersonas usdao = new DAOPersonas();
                 //pwcompare

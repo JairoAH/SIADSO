@@ -50,51 +50,104 @@
                                 }
                             %>
                         </h2>
+
+                        <%-- GESTION: Administracion de datos que alimentan la base --%>        
                         <ul>
-                            <li class="icon icon-arrow-left">
-                                <a class="icon icon-search" href="#">Administración</a>
+                            <li class="icon icon-arrow-left"><a class="icon icon-search" href="#">Gestión</a>
                                 <div class="mp-level">
-                                    <h2 class="icon icon-news">Administración</h2>
+                                    <h2 class="icon icon-search">Gestión</h2>
+                                    <a class="mp-back" href="#">Volver al menú</a>
+                                    <ul>
+                                        <li><a href="#" target="iframe">Personas</a></li>
+                                        <li class="icon icon-arrow-left"><a href="#" >Equipos</a>
+                                            <div class="mp-level">
+                                                <h2 class="icon icon-search">Equipos</h2>
+                                                <a class="mp-back">Volver a Gestión</a>
+                                                <ul>
+                                                    <li class="icon icon-arrow-left"><a>Tipos</a>
+                                                        <div class="mp-level">
+                                                            <h2>Tipos</h2>
+                                                            <a class="mp-back">Volver a equipos</a>
+                                                            <ul>
+                                                                <li><a href="#">Agregar</a></li>
+                                                                <li><a href="#">Modificar</a></li>
+                                                                <li><a href="#">Borrar</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="icon icon-arrow-left"><a>Marcas</a>
+                                                        <div class="mp-level">
+                                                            <h2>Marcas</h2>
+                                                            <a class="mp-back">Volver a equipos</a>
+                                                            <ul>
+                                                                <li><a href="#">Agregar</a></li>
+                                                                <li><a href="#">Modificar</a></li>
+                                                                <li><a href="#">Borrar</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="icon icon-arrow-left"><a>Modelos</a>
+                                                        <div class="mp-level">
+                                                            <h2>Modelos</h2>
+                                                            <a class="mp-back">Volver a equipos</a>
+                                                            <ul>
+                                                                <li><a href="#">Agregar</a></li>
+                                                                <li><a href="#">Modificar</a></li>
+                                                                <li><a href="#">Borrar</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="icon icon-arrow-left"><a>Estados</a>
+                                                        <div class="mp-level">
+                                                            <h2>Estados</h2>
+                                                            <a class="mp-back">Volver a equipos</a>
+                                                            <ul>
+                                                                <li><a href="#">Agregar</a></li>
+                                                                <li><a href="#">Modificar</a></li>
+                                                                <li><a href="#">Borrar</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="#" target="iframe">Solicitudes</a></li>
+                                    </ul>
+                                </div>
+                            </li>        
+
+                            <%-- REGISTROS --%>
+                            <li class="icon icon-arrow-left">
+                                <a class="icon icon-search" href="#">Registro</a>
+                                <div class="mp-level">
+                                    <h2 class="icon icon-news">Registro</h2>
                                     <a class="mp-back" href="#">Volver al menu</a>
                                     <ul>
+                                        <li><a href="#">Personas</a></li>
+                                        <li><a href="#">Equipos</a></li>
+                                        <li><a href="#">Casos</a></li>
                                         <li><a href="#">Solicitudes</a></li>
-                                        <li><a href="RegistroPersona.html" target="iframe">Usuarios</a></li>
-                                        <li><a href="RegistroEquipo.jsp" target="iframe">Equipos</a></li>
                                     </ul>
                                 </div>
                             </li>
 
-
                             <li class="icon icon-arrow-left">
-                                <a class="icon icon-search" href="#">Consulta de servicios</a>
+                                <a class="icon icon-search" href="#">Cancelar servicios</a>
                                 <div class="mp-level">
-                                    <h2 class="icon icon-news">Magazines</h2>
-                                    <a class="mp-back" href="#">back</a>
+
+
+                                    <h2 class="icon icon-shop">Cancelar servicios</h2>
+                                    <a class="mp-back" href="#">Volver al menú</a>
                                     <ul>
-                                        <li><a href="#">National Geographic</a></li>
-                                        <li><a href="#">Scientific American</a></li>
-                                        <li><a href="#">The Spectator</a></li>
-                                        <li><a href="#">The Rambler</a></li>
-                                        <li><a href="#">Physics World</a></li>
-                                        <li><a href="#">The New Scientist</a></li>
-                                    </ul>
-                                </div>
-                            </li>
 
 
-
-
-                            <li class="icon icon-arrow-left">
-                                <a class="icon icon-user" href="#">Cancelar servicios</a>
-                                <div class="mp-level">
-                                    <h2 class="icon icon-shop">Store</h2>
-                                    <a class="mp-back" href="#">back</a>
-                                    <ul>
                                         <li class="icon icon-arrow-left">
                                             <a class="icon icon-t-shirt" href="#">Clothes</a>
+
+
                                             <div class="mp-level">
                                                 <h2 class="icon icon-t-shirt">Clothes</h2>
-                                                <a class="mp-back" href="#">back</a>
+                                                <a class="mp-back" href="#">Volver</a>
                                                 <ul>
                                                     <li class="icon icon-arrow-left">
                                                         <a class="icon icon-female" href="#">Women's Clothing</a>
@@ -139,25 +192,42 @@
                                 </div>
                             </li>
 
-                            <li class="icon icon-arrow-left">
-                                <a class="icon icon-search" href="#">Informes</a>
-                                <div class="mp-level">
-                                    <h2 class="icon icon-news">Informes</h2>
-                                    <a class="mp-back" href="#">Volver al menu</a>
-                                    <ul>
-                                        <li><a href="#">Por Area</a></li>
-                                        <li><a href="#">Por Fecha</a></li>
-                                        <li><a href="#">Por Solicitud</a></li>
-                                        <li><a href="#">Por Tecnico</a></li>
-                                        <li><a href="#">Por Usuario</a></li>
-                                    </ul>
-                                </div>
-                            </li>
+                            <%-- ADMINISTRACION:  --%>        
+                            <ul>
+                                <li class="icon icon-arrow-left">
+                                    <a class="icon icon-search" href="#">Administración</a>
+                                    <div class="mp-level">
+                                        <h2 class="icon icon-news">Administración</h2>
+                                        <a class="mp-back" href="#">Volver al menu</a>
+                                        <ul>
+                                            <li><a href="#">Personas</a></li>
+                                            <li><a href="#" target="iframe">Equipos</a></li>
+                                            <li><a href="#" target="iframe">Solicitudes</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li class="icon icon-arrow-left">
+                                    <a class="icon icon-search" href="#">Informes</a>
+                                    <div class="mp-level">
+                                        <h2 class="icon icon-news">Informes</h2>
+                                        <a class="mp-back" href="#">Volver al menú</a>
+                                        <ul>
+                                            <li><a href="#">Por Area</a></li>
+                                            <li><a href="#">Por Fecha</a></li>
+                                            <li><a href="#">Por Solicitud</a></li>
+                                            <li><a href="#">Por Rol</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
 
 
-                            <li><a class="icon icon-stack" href="#">Actualizar Datos</a></li>
 
-                        </ul>
+
+
+                                <li><a class="icon icon-search" href="#">Actualizar Datos</a></li>
+
+                            </ul>
 
                     </div>
                 </nav>
@@ -172,8 +242,9 @@
                                     II
                                     <a href="CierreSesion.jsp" 
                                        title="Cerrar Sesión"
-                                       onclick="confirmar(this.href);return false"> 
-                                        <font color="red"><font color="red">Cerrar Sesión
+                                       onclick="confirmar(this.href);
+                                               return false"> 
+                                        <font color="red"><font color="red"><b>Cerrar Sesión</b>
                                         </font></a>
                             </div>
 
