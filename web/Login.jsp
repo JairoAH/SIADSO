@@ -50,11 +50,22 @@
 
             <!--LOGIN FORM-->
             <form role="form" action="Servlet" class="login-form" method="GET">
-                
+
                 <!--HEADER-->
                 <div class="header">
                     <!--TITLE--><h1>Iniciar sesión</h1><!--END TITLE-->
-                    <!--DESCRIPTION--><span>Por favor ingrese cédula y contraseña para acceder a su panel de control.</span><!--END DESCRIPTION-->
+                    <!--DESCRIPTION--><span>Por favor ingrese cédula y contraseña para acceder a su panel de control.</span><br><!--END DESCRIPTION-->
+                    <%
+                        if (Utilidades.Conexion.getInstance() != null) {
+                    %>
+                    <span>Estado de conexión BD: <font color="Lime">Conectado<font></span>
+                        <%
+                        } else {
+                        %>
+                    <span>Estado de conexión BD: <font color="Red">Desconectado<font></span>
+                        <%
+                            }
+                        %>
                 </div>
                 <!--END HEADER-->
 

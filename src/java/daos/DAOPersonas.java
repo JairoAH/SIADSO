@@ -19,30 +19,30 @@ public class DAOPersonas {
     }
 
     public DTOPersonas validarPersona(String IdPersona, String Clave) throws myException {
-        DTOPersonas perUsuario = new DTOPersonas();
+        DTOPersonas perUsuario = new DTOPersonas(); //Creo un objeto DTO vacio
+
         try {
-            pstmt = cnn.prepareStatement("SELECT idPersona, nombres, apellidos, clave, rol, estado from usuarios WHERE idPersona=? AND Clave=?");
+            pstmt = cnn.prepareStatement("SELECT personas.idPersona, personas.nombre1, personas.apellido1, personas.correo, "
+                    + "personas.clave, personas.idEstadoPersona, roles.nombreRol "
+                    + "FROM personas, personasroles, roles "
+                    + "WHERE personas.idPersona=? AND personas.clave=? "
+                    + "AND personas.idPersona=personasroles.idPersona "
+                    + "AND personasroles.idRol=roles.idRol");
             pstmt.setString(1, IdPersona);
             pstmt.setString(2, Clave);
-            rs = pstmt.executeQuery();
-            pstmt.toString();
+            rs = pstmt.executeQuery();//Ejecuta consulta
+            pstmt.toString();//
             if (rs != null) {
                 while (rs.next()) {
-                    
-                    perUsuario.setIdPersona(rs.getString("IdPersona"));
-                    perUsuario.setNombres(rs.getString("Nombres"));
-                    perUsuario.setApellidos(rs.getString("Apellidos"));
-                    perUsuario.setClave(rs.getString("Clave"));
-                    perUsuario.setRol(rs.getString("Rol"));
-                    perUsuario.setEstado(rs.getString("Estado"));
+                    perUsuario.setIdPersona(rs.getString("personas.idPersona"));
+                    perUsuario.setNombre1(rs.getString("personas.nombre1"));
+                    perUsuario.setApellido1(rs.getString("personas.apellido1"));
+                    perUsuario.setCorreo(rs.getString("personas.correo"));
+                    perUsuario.setClave(rs.getString("personas.clave"));
+                    perUsuario.setIdEstadoPersonaFK(rs.getInt("personas.idEstadoPersona"));
+                    perUsuario.setNombreRol(rs.getString("roles.nombreRol"));
                 }
-            } 
-            
-//            else {
-//                perUsuario = null;
-//                throw new myException("usuario no encotrado");
-//            }
-
+            }
         } catch (SQLException ex) {
             throw new myException("error al consultar " + ex.getSQLState());
         }

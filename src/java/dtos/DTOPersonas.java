@@ -1,100 +1,102 @@
 package dtos;
 
 public class DTOPersonas {
+    
+    private String idPersona="", nombre1="", nombre2="", apellido1="", apellido2="", cargo="", clave="", correo="";
+    private int idUbicacionFK=0, idEstadoPersonaFK=0;
+    
+    private String nombreRol="";
 
-    private String idPersona = "";
-    private String nombres = "";
-    private String apellidos = "";
-    private String clave = "";
-    private String rol = "";
-    private String estado = "";
-
-    //Constructor
     public DTOPersonas() {
     }
 
-    /**
-     * @return the idPersona
-     */
     public String getIdPersona() {
         return idPersona;
     }
 
-    /**
-     * @param idPersona the idPersona to set
-     */
     public void setIdPersona(String idPersona) {
         this.idPersona = idPersona;
     }
 
-    /**
-     * @return the nombres
-     */
-    public String getNombres() {
-        return nombres;
+    public String getNombre1() {
+        return nombre1;
     }
 
-    /**
-     * @param nombres the nombre to set
-     */
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
+    public void setNombre1(String nombre1) {
+        this.nombre1 = nombre1;
     }
 
-    /**
-     * @return the apellidos
-     */
-    public String getApellidos() {
-        return apellidos;
+    public String getNombre2() {
+        return nombre2;
     }
 
-    /**
-     * @param apellidos the apellido to set
-     */
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setNombre2(String nombre2) {
+        this.nombre2 = nombre2;
     }
 
-    /**
-     * @return the clave
-     */
+    public String getApellido1() {
+        return apellido1;
+    }
+
+    public void setApellido1(String apellido1) {
+        this.apellido1 = apellido1;
+    }
+
+    public String getApellido2() {
+        return apellido2;
+    }
+
+    public void setApellido2(String apellido2) {
+        this.apellido2 = apellido2;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
     public String getClave() {
         return clave;
     }
 
-    /**
-     * @param clave the pass to set
-     */
     public void setClave(String clave) {
         this.clave = clave;
     }
 
-    /**
-     * @return the rol
-     */
-    public String getRol() {
-        return rol;
+    public String getCorreo() {
+        return correo;
     }
 
-    /**
-     * @param rol the rol to set
-     */
-    public void setRol(String rol) {
-        this.rol = rol;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
-    /**
-     * @return the estado
-     */
-    public String getEstado() {
-        return estado;
+    public int getIdUbicacionFK() {
+        return idUbicacionFK;
     }
 
-    /**
-     * @param estado the estado to set
-     */
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setIdUbicacionFK(int idUbicacionFK) {
+        this.idUbicacionFK = idUbicacionFK;
     }
+
+    public int getIdEstadoPersonaFK() {
+        return idEstadoPersonaFK;
+    }
+
+    public void setIdEstadoPersonaFK(int idEstadoPersonaFK) {
+        this.idEstadoPersonaFK = idEstadoPersonaFK;
+    }
+
+    public String getNombreRol() {
+        return nombreRol;
+    }
+
+    public void setNombreRol(String nombreRol) {
+        this.nombreRol = nombreRol;
+    }
+    
 
 }

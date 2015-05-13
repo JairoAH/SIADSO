@@ -28,27 +28,28 @@ public class Login extends HttpServlet {
 
                 HttpSession sesion = request.getSession(); //Objeto de tipo sesión
                 sesion.setMaxInactiveInterval(1800);//Tiempo de actividad de la sesión
-                DTOPersonas usdto = new DTOPersonas();
-                DAOPersonas usdao = new DAOPersonas();
+                DTOPersonas usdto = new DTOPersonas(); //Instacion DTO
+                DAOPersonas usdao = new DAOPersonas(); //Instancio DAO
                 //pwcompare
                 usdto = usdao.validarPersona(IdPersona, Clave);
 
-                if (usdto.getIdPersona() != "") {
+                if (usdto.getIdPersona()!= "") {
                     sesion.setAttribute("usuario", usdto);
-                    if (usdto.getEstado().equals("Activo")) {
-                        if (usdto.getRol().equals("Usuario")) {
-                            out.print(usdto.getIdPersona() + "-" + usdto.getNombres());
+                    
+                    if (usdto.getIdEstadoPersonaFK()==2) {
+                        if (usdto.getNombreRol().equals("Usuario")) {
+                            out.print(usdto.getIdPersona() + "-" + usdto.getNombre1());
                             response.sendRedirect("IndexUsuario.jsp");
-                        } else if (usdto.getRol().equals("Tecnico")) {
-                            out.print(usdto.getIdPersona() + "-" + usdto.getNombres());
+                        } else if (usdto.getNombreRol().equals("Tecnico")) {
+                            out.print(usdto.getIdPersona() + "-" + usdto.getNombre1());
                             response.sendRedirect("IndexTecnico.jsp");
-                        } else if (usdto.getRol().equals("Administrador")) {
-                            out.print(usdto.getIdPersona() + "-" + usdto.getNombres());
+                        } else if (usdto.getNombreRol().equals("Administrador")) {
+                            out.print(usdto.getIdPersona() + "-" + usdto.getNombre1());
                             response.sendRedirect("IndexAdministrador.jsp");
-                        } else if (usdto.getRol().equals("Superadministrador")) {
-                            out.print(usdto.getIdPersona() + "-" + usdto.getNombres());
+                        } else if (usdto.getNombreRol().equals("Superadministrador")) {
+                            out.print(usdto.getIdPersona() + "-" + usdto.getNombre1());
                             response.sendRedirect("IndexSuperadministrador.jsp");
-                        } else if (usdto.getRol().equals("SinRol")) {
+                        } else if (usdto.getNombreRol().equals("SinRol")) {
                             out.print("<SCRIPT LANGUAGE='javascript'>alert('No tienes un rol definido, contacta al administrador.');document.location=('Login.jsp')</script>");
                         }
                     } else {

@@ -39,14 +39,14 @@
                 <nav id="mp-menu" class="mp-menu">
                     <div class="mp-level">
                         <h2 class="icon icon-male">SUPERADMINISTRADOR:</br>
-                            <%
+                            <% //Codigo que evita abrir esta pagina sin tener una sesion activa.
                                 HttpSession sesion = request.getSession(false);
                                 if (sesion.getAttribute("usuario") == null) {
                                     out.print("<SCRIPT LANGUAGE='javascript'>alert('Sesion caducada, ingresa nuevamente.');document.location=('Login.jsp')</script>"); //Notifique y redireccione.
                                 } else {
                                     DTOPersonas usuarioMostrar = new DTOPersonas();
                                     usuarioMostrar = ((DTOPersonas) sesion.getAttribute("usuario"));
-                                    out.print(usuarioMostrar.getNombres() + " " + usuarioMostrar.getApellidos());
+                                    out.print(usuarioMostrar.getNombre1() + " " + usuarioMostrar.getApellido1());
                                 }
                             %>
                         </h2>
@@ -58,51 +58,51 @@
                                     <h2 class="icon icon-search">Gestión</h2>
                                     <a class="mp-back" href="#">Volver al menú</a>
                                     <ul>
-                                        <li><a href="#" target="iframe">Personas</a></li>
+                                        <li><a href="agregartipo.jsp" target="iframe">Personas</a></li>
                                         <li class="icon icon-arrow-left"><a href="#" >Equipos</a>
                                             <div class="mp-level">
                                                 <h2 class="icon icon-search">Equipos</h2>
                                                 <a class="mp-back">Volver a Gestión</a>
                                                 <ul>
-                                                    <li class="icon icon-arrow-left"><a>Tipos</a>
+                                                    <li class="icon icon-arrow-left"><a>Tipo</a>
                                                         <div class="mp-level">
-                                                            <h2>Tipos</h2>
+                                                            <h2>Tipo</h2>
                                                             <a class="mp-back">Volver a equipos</a>
                                                             <ul>
-                                                                <li><a href="#">Agregar</a></li>
+                                                                <li><a href="agregartipo.jsp" target="iframe">Agregar</a></li>
                                                                 <li><a href="#">Modificar</a></li>
                                                                 <li><a href="#">Borrar</a></li>
                                                             </ul>
                                                         </div>
                                                     </li>
-                                                    <li class="icon icon-arrow-left"><a>Marcas</a>
+                                                    <li class="icon icon-arrow-left"><a>Marca</a>
                                                         <div class="mp-level">
-                                                            <h2>Marcas</h2>
+                                                            <h2>Marca</h2>
                                                             <a class="mp-back">Volver a equipos</a>
                                                             <ul>
-                                                                <li><a href="#">Agregar</a></li>
+                                                                <li><a href="agregarmarca.jsp" target="iframe">Agregar</a></li>
                                                                 <li><a href="#">Modificar</a></li>
                                                                 <li><a href="#">Borrar</a></li>
                                                             </ul>
                                                         </div>
                                                     </li>
-                                                    <li class="icon icon-arrow-left"><a>Modelos</a>
+                                                    <li class="icon icon-arrow-left"><a>Modelo</a>
                                                         <div class="mp-level">
-                                                            <h2>Modelos</h2>
+                                                            <h2>Modelo</h2>
                                                             <a class="mp-back">Volver a equipos</a>
                                                             <ul>
-                                                                <li><a href="#">Agregar</a></li>
+                                                                <li><a href="agregarmodelo.jsp" target="iframe">Agregar</a></li>
                                                                 <li><a href="#">Modificar</a></li>
                                                                 <li><a href="#">Borrar</a></li>
                                                             </ul>
                                                         </div>
                                                     </li>
-                                                    <li class="icon icon-arrow-left"><a>Estados</a>
+                                                    <li class="icon icon-arrow-left"><a>Estado</a>
                                                         <div class="mp-level">
-                                                            <h2>Estados</h2>
+                                                            <h2>Estado</h2>
                                                             <a class="mp-back">Volver a equipos</a>
                                                             <ul>
-                                                                <li><a href="#">Agregar</a></li>
+                                                                <li><a href="agregarestado.jsp" target="iframe">Agregar</a></li>
                                                                 <li><a href="#">Modificar</a></li>
                                                                 <li><a href="#">Borrar</a></li>
                                                             </ul>
@@ -220,19 +220,11 @@
                                         </ul>
                                     </div>
                                 </li>
-
-
-
-
-
                                 <li><a class="icon icon-search" href="#">Actualizar Datos</a></li>
-
                             </ul>
-
                     </div>
                 </nav>
                 <!-- /mp-menu -->
-
                 <div class="scroller"><!-- this is for emulating position fixed of the nav -->
                     <div class="scroller-inner">
                         <!-- Top Navigation -->
@@ -247,28 +239,32 @@
                                         <font color="red"><font color="red"><b>Cerrar Sesión</b>
                                         </font></a>
                             </div>
-
+                            <script language="JavaScript">
+                            //Ajusta el tamaño del iframe al de su contenido interior para evitar barra scroll.
+                                function autofitIframe(id) {
+                                    if (!window.opera && document.all && document.getElementById) {
+                                        id.style.height = id.contentWindow.document.body.scrollHeight;
+                                    } else if (document.getElementById) {
+                                        id.style.height = id.contentDocument.body.scrollHeight + "px";
+                                    }
+                                }
+                            </script>
+                            <!-- /Caracteristicas del iframe -->
                             <iframe  src="../../Registro equipo/RegistroEquipo.html" name="iframe"
-                                     width="1150" height="700" scrolling="auto" frameborder="1">
+                                     width="100%" height="0" scrolling="auto" frameborder="1"transparency="transparency" onload="autofitIframe(this);">
                             <p>Texto alternativo para navegadores que no aceptan iframes.</p>
                             </iframe>
-
-                        </div>
-                    </div>
-
-
-
-                    <!-- /scroller-inner -->
+                        </div><!-- /content clearfix -->
+                    </div><!-- /scroller-inner -->
                 </div><!-- /scroller -->
-
             </div><!-- /pusher -->
         </div><!-- /container -->
         <script src="js/classie.js"></script>
         <script src="js/mlpushmenu.js"></script>
         <script>
-                                           new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'), {
-                                               type: 'cover'
-                                           });
+                                         new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'), {
+                                             type: 'cover'
+                                         });
 
         </script>
         <script language="JavaScript" type="text/javascript">
